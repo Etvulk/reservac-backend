@@ -3,6 +3,7 @@ name: backend Actions
 on:
   push:
     branches: [ "master" ]
+  workflow_dispatch:
   
 jobs:
 
@@ -12,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Docker backend, db
+    - name: Deploy Docker backend and db
       run: |
         cd /home/prueba/services/reservac/backend/
         git pull https://github.com/Etvulk/reservac-backend.git
